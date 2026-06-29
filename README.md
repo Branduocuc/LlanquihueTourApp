@@ -1,63 +1,37 @@
-LlanquihueTourApp
-Descripción
+# LlanquihueTourApp
 
-LlanquihueTourApp es una aplicación desarrollada en Java para gestionar información de tours turísticos de la agencia Llanquihue Tour.
+## Descripción
 
-El sistema permite cargar información desde un archivo de texto, almacenar los datos en una colección dinámica, mostrar los registros por consola, realizar filtros y efectuar búsquedas simples.
+Esta semana se implementó una jerarquía de clases utilizando herencia simple para representar los distintos servicios turísticos ofrecidos por la agencia Llanquihue Tour. El objetivo fue reutilizar atributos comunes mediante una superclase y especializar el comportamiento de cada tipo de servicio a través de subclases.
 
-Estructura del Proyecto
+## Clases creadas
 
-Paquete model
+### Paquete model
 
-Contiene las clases del modelo de datos:
+* **ServicioTuristico:** superclase con los atributos comunes `nombre` y `duracionHoras`.
+* **RutaGastronomica:** hereda de `ServicioTuristico` y agrega el atributo `numeroDeParadas`.
+* **PaseoLacustre:** hereda de `ServicioTuristico` y agrega el atributo `tipoEmbarcacion`.
+* **ExcursionCultural:** hereda de `ServicioTuristico` y agrega el atributo `lugarHistorico`.
 
-Tour: representa un tour turístico.
-Guia: representa un guía turístico.
-Operador: representa un operador turístico.
+### Paquete data
 
-Paquete data
+* **GestorServicios:** crea dos instancias de cada subclase y muestra su información mediante el método `toString()`.
 
-Contiene las clases encargadas de la gestión de datos:
+### Paquete ui
 
-GestorDatos: realiza la lectura del archivo de texto y carga los tours en una colección.
+* **Main:** ejecuta la aplicación llamando al método `crearServicios()` de `GestorServicios`.
 
-Paquete ui
+## Conceptos aplicados
 
-Contiene la interfaz de ejecución:
+* Herencia simple.
+* Uso de `extends`.
+* Uso del constructor de la superclase mediante `super(...)`.
+* Sobrescritura del método `toString()` con `@Override`.
+* Organización del proyecto mediante paquetes.
 
-Main: clase principal encargada de ejecutar el programa.
+## Instrucciones para ejecutar Main
 
-Funcionalidades
+1. Abrir el proyecto en IntelliJ IDEA.
+2. Ejecutar la clase `Main` ubicada en el paquete `ui`.
+3. Observar en la consola la información de los servicios turísticos creados por el programa.
 
-Lectura de datos desde archivo .txt.
-Almacenamiento de datos mediante ArrayList.
-Visualización de todos los tours registrados.
-Filtrado de tours con precio superior a un valor determinado.
-Búsqueda simple de tours por nombre.
-Manejo básico de errores mediante try-catch.
-Archivo de Datos
-
-El programa utiliza el archivo:
-
-tours.txt
-
-Formato de cada registro:
-
-Nombre;Tipo;Precio
-
-Ejemplo:
-
-Ruta de los Lagos;Aventura;25000
-
-Tecnologías Utilizadas
-Java
-IntelliJ IDEA
-Colecciones (ArrayList)
-Lectura de archivos con BufferedReader
-
-Ejecución
-
-Abrir el proyecto en IntelliJ IDEA.
-Verificar que el archivo tours.txt se encuentre en la carpeta resources.
-Ejecutar la clase Main.
-Observar los resultados mostrados por consola.
