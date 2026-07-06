@@ -17,12 +17,16 @@ Uso de un gestor para cargar y mostrar los servicios disponibles.
 Estructura del proyecto
 src
 ├── data
+│   ├── GestorDatos.java
 │   └── GestorServicios.java
 ├── model
 │   ├── ServicioTuristico.java
 │   ├── RutaGastronomica.java
 │   ├── PaseoLacustre.java
-│   └── ExcursionCultural.java
+│   ├── ExcursionCultural.java
+│   ├── Guia.java
+│   ├── Operador.java
+│   └── Tour.java
 └── ui
     └── Main.java
 Tecnologías y conceptos utilizados
@@ -32,13 +36,14 @@ Herencia.
 Polimorfismo.
 Sobrescritura de métodos.
 Colecciones genéricas.
-List y ArrayList.
+Uso de List y ArrayList.
+Recorrido con for-each.
 Organización por paquetes.
 Funcionamiento
 
 La aplicación utiliza una clase principal llamada ServicioTuristico, desde la cual se derivan distintos tipos de servicios turísticos.
 
-Cada servicio tiene su propia forma de mostrar información, pero todos pueden ser almacenados en una misma lista gracias al uso de polimorfismo.
+Cada servicio tiene su propia forma de mostrar información, pero todos pueden almacenarse en una misma lista gracias al uso de polimorfismo.
 
 El gestor de servicios carga distintos servicios turísticos y luego los recorre para mostrar su información en consola.
 
