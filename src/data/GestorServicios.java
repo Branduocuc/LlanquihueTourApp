@@ -1,36 +1,32 @@
 package data;
 
-import model.ExcursionCultural;
-import model.PaseoLacustre;
+import model.ServicioTuristico;
 import model.RutaGastronomica;
+import model.PaseoLacustre;
+import model.ExcursionCultural;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GestorServicios {
 
-    public void crearServicios() {
+    private List<ServicioTuristico> servicios;
 
-        RutaGastronomica ruta1 =
-                new RutaGastronomica("Ruta Sabores del Sur", 4, 5);
+    public GestorServicios() {
+        this.servicios = new ArrayList<>();
+    }
 
-        RutaGastronomica ruta2 =
-                new RutaGastronomica("Ruta Tradiciones", 3, 4);
+    public void cargarServicios() {
+        servicios.add(new RutaGastronomica("Sabores del Sur", 4, 5));
+        servicios.add(new RutaGastronomica("Ruta Tradiciones", 3, 4));
+        servicios.add(new PaseoLacustre("Lago Llanquihue", 2, "Catamarán"));
+        servicios.add(new PaseoLacustre("Lago Todos los Santos", 3, "Lancha"));
+        servicios.add(new ExcursionCultural("Patrimonio Chilote", 5, "Iglesia de Castro"));
+    }
 
-        PaseoLacustre paseo1 =
-                new PaseoLacustre("Lago Llanquihue", 2, "Catamarán");
-
-        PaseoLacustre paseo2 =
-                new PaseoLacustre("Lago Todos los Santos", 3, "Lancha");
-
-        ExcursionCultural excursion1 =
-                new ExcursionCultural("Patrimonio Chilote", 5, "Iglesia de Castro");
-
-        ExcursionCultural excursion2 =
-                new ExcursionCultural("Fuerte Niebla", 4, "Fuerte Histórico");
-
-        System.out.println(ruta1);
-        System.out.println(ruta2);
-        System.out.println(paseo1);
-        System.out.println(paseo2);
-        System.out.println(excursion1);
-        System.out.println(excursion2);
+    public void mostrarServicios() {
+        for (ServicioTuristico servicio : servicios) {
+            servicio.mostrarInformacion();
+        }
     }
 }

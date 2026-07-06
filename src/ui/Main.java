@@ -8,7 +8,10 @@ public class Main {
 
         GestorServicios gestor = new GestorServicios();
 
-        gestor.crearServicios();
+        gestor.cargarServicios();
 
+        System.out.println("=== SERVICIOS TURÍSTICOS ===");
+
+        gestor.mostrarServicios();
     }
 }

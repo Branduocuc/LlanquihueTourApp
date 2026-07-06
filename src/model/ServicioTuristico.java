@@ -24,7 +24,17 @@ public class ServicioTuristico {
 
     public void setDuracionHoras(int duracionHoras) {
         this.duracionHoras = duracionHoras;
+
     }
+
+    public void mostrarInformacion() {
+        System.out.println("Servicio: " + nombre +
+                ", Duración: " + duracionHoras + " horas");
+    }
+
+
+
+
 
     @Override
     public String toString() {
