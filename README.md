@@ -1,37 +1,61 @@
-# LlanquihueTourApp
+LlanquihueTourApp
+Descripción
 
-## Descripción
+LlanquihueTourApp es una aplicación desarrollada en Java para gestionar servicios turísticos de la agencia Llanquihue Tour.
 
-Esta semana se implementó una jerarquía de clases utilizando herencia simple para representar los distintos servicios turísticos ofrecidos por la agencia Llanquihue Tour. El objetivo fue reutilizar atributos comunes mediante una superclase y especializar el comportamiento de cada tipo de servicio a través de subclases.
+El sistema permite organizar distintos tipos de servicios, como rutas gastronómicas, paseos lacustres y excursiones culturales, usando una estructura orientada a objetos. Además, permite almacenar estos servicios en una misma colección y mostrar su información de forma dinámica por consola.
 
-## Clases creadas
+Funcionalidades
+Registro de distintos tipos de servicios turísticos.
+Gestión de servicios mediante una colección genérica.
+Visualización de la información de cada servicio por consola.
+Organización de servicios según su tipo:
+Rutas gastronómicas.
+Paseos lacustres.
+Excursiones culturales.
+Uso de un gestor para cargar y mostrar los servicios disponibles.
+Estructura del proyecto
+src
+├── data
+│   └── GestorServicios.java
+├── model
+│   ├── ServicioTuristico.java
+│   ├── RutaGastronomica.java
+│   ├── PaseoLacustre.java
+│   └── ExcursionCultural.java
+└── ui
+    └── Main.java
+Tecnologías y conceptos utilizados
+Java.
+Programación orientada a objetos.
+Herencia.
+Polimorfismo.
+Sobrescritura de métodos.
+Colecciones genéricas.
+List y ArrayList.
+Organización por paquetes.
+Funcionamiento
 
-### Paquete model
+La aplicación utiliza una clase principal llamada ServicioTuristico, desde la cual se derivan distintos tipos de servicios turísticos.
 
-* **ServicioTuristico:** superclase con los atributos comunes `nombre` y `duracionHoras`.
-* **RutaGastronomica:** hereda de `ServicioTuristico` y agrega el atributo `numeroDeParadas`.
-* **PaseoLacustre:** hereda de `ServicioTuristico` y agrega el atributo `tipoEmbarcacion`.
-* **ExcursionCultural:** hereda de `ServicioTuristico` y agrega el atributo `lugarHistorico`.
+Cada servicio tiene su propia forma de mostrar información, pero todos pueden ser almacenados en una misma lista gracias al uso de polimorfismo.
 
-### Paquete data
+El gestor de servicios carga distintos servicios turísticos y luego los recorre para mostrar su información en consola.
 
-* **GestorServicios:** crea dos instancias de cada subclase y muestra su información mediante el método `toString()`.
+Ejecución
 
-### Paquete ui
+Para ejecutar el proyecto:
 
-* **Main:** ejecuta la aplicación llamando al método `crearServicios()` de `GestorServicios`.
+Abrir el proyecto en IntelliJ IDEA.
+Ejecutar la clase Main, ubicada en el paquete ui.
+Revisar los servicios mostrados en la consola.
+Ejemplo de salida
+=== SERVICIOS TURÍSTICOS ===
+Ruta Gastronómica: Sabores del Sur, Duración: 4 horas, Paradas: 5
+Ruta Gastronómica: Ruta Tradiciones, Duración: 3 horas, Paradas: 4
+Paseo Lacustre: Lago Llanquihue, Duración: 2 horas, Embarcación: Catamarán
+Paseo Lacustre: Lago Todos los Santos, Duración: 3 horas, Embarcación: Lancha
+Excursión Cultural: Patrimonio Chilote, Duración: 5 horas, Lugar histórico: Iglesia de Castro
+Estado del proyecto
 
-## Conceptos aplicados
-
-* Herencia simple.
-* Uso de `extends`.
-* Uso del constructor de la superclase mediante `super(...)`.
-* Sobrescritura del método `toString()` con `@Override`.
-* Organización del proyecto mediante paquetes.
-
-## Instrucciones para ejecutar Main
-
-1. Abrir el proyecto en IntelliJ IDEA.
-2. Ejecutar la clase `Main` ubicada en el paquete `ui`.
-3. Observar en la consola la información de los servicios turísticos creados por el programa.
-
+El sistema se encuentra funcional en consola y permite representar diferentes servicios turísticos de manera organizada, flexible y extensible para futuras mejoras.
