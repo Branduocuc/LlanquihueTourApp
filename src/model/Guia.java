@@ -1,11 +1,17 @@
 package model;
 
-public class Guia {
+public class Guia implements Registrable {
 
     private String nombre;
+    private String especialidad;
 
     public Guia(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Guia(String nombre, String especialidad) {
+        this.nombre = nombre;
+        this.especialidad = especialidad;
     }
 
     public String getNombre() {
@@ -16,8 +22,19 @@ public class Guia {
         this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return nombre;
+    public String getEspecialidad() {
+        return especialidad;
     }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+
+    @Override
+    public String mostrarResumen() {
+        return "Guía: " + nombre +
+                "\nEspecialidad: " + especialidad;
+    }
+
 }
